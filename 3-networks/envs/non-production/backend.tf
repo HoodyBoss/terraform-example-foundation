@@ -16,7 +16,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "UPDATE_ME"
+    bucket = "bkt-b-tfstate-62bc"
     prefix = "terraform/networks/non-production"
   }
 }

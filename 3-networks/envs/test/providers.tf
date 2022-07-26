@@ -14,4 +14,20 @@
  * limitations under the License.
  */
 
-access_context_manager_policy_id = 000000000000
+locals {
+  tf_sa = var.terraform_service_account
+}
+
+
+/******************************************
+  Provider credential configuration
+ *****************************************/
+provider "google" {
+  impersonate_service_account = local.tf_sa
+  request_timeout             = "120s"
+}
+
+provider "google-beta" {
+  impersonate_service_account = local.tf_sa
+  request_timeout             = "120s"
+}
